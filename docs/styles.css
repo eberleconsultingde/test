@@ -1,0 +1,133 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  background: #f7f8fb;
+  color: #111827;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.lead {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.privacy-note,
+.limit-note {
+  margin: 0.25rem 0;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.mode-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.warning {
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  color: #92400e;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin-top: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.error {
+  color: #b91c1c;
+  min-height: 1.25rem;
+  margin: 0.25rem 0 0;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+button {
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+}
+
+button.secondary {
+  border-color: #6b7280;
+  background: #6b7280;
+}
+
+@media (max-width: 700px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mailto Link Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Mailto Link Generator</h1>
+      <p class="lead">
+        Create a ready-to-use <code>mailto:</code> link that opens a person’s default email app with prefilled fields.
+      </p>
+      <p class="privacy-note">This tool runs entirely in your browser. No backend.</p>
+      <p class="limit-note">Some mail clients have limits on very long body texts.</p>
+
+      <section class="card" aria-labelledby="mode-heading">
+        <h2 id="mode-heading">Choose mode</h2>
+        <div class="mode-group" role="radiogroup" aria-label="Generator mode">
+          <label>
+            <input type="radio" name="mode" value="privacy" checked />
+            Privacy mode (fake email)
+          </label>
+          <label>
+            <input type="radio" name="mode" value="custom" />
+            Use my email
+          </label>
+        </div>
+        <p id="privacy-warning" class="warning" role="alert">
+          Privacy mode uses a fake email address. Replace it before sending.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="fields-heading">
+        <h2 id="fields-heading">Email details</h2>
+        <div class="form-grid">
+          <label for="to">To</label>
+          <div>
+            <input id="to" name="to" type="email" autocomplete="email" />
+            <p id="to-error" class="error" aria-live="polite"></p>
+          </div>
+
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" />
+
+          <label for="body">Body</label>
+          <textarea id="body" name="body" rows="8"></textarea>
+
+          <label for="cc">CC (optional)</label>
+          <input id="cc" name="cc" type="text" placeholder="name@example.com, other@example.com" />
+
+          <label for="bcc">BCC (optional)</label>
+          <input id="bcc" name="bcc" type="text" placeholder="name@example.com, other@example.com" />
+        </div>
+
+        <label class="checkbox-label" for="signature">
+          <input id="signature" name="signature" type="checkbox" />
+          Add signature placeholder
+        </label>
+
+        <div class="preset-row" aria-label="Preset examples">
+          <span>Preset examples:</span>
+          <button type="button" class="preset-btn" data-subject="Quick question" data-body="Hi,\n\nI have a quick question about your services.\n\nThanks!">Quick question</button>
+          <button type="button" class="preset-btn" data-subject="Support request" data-body="Hello support,\n\nI need help with:\n- Issue:\n- Steps tried:\n\nThank you.">Support request</button>
+        </div>
+
+        <div class="actions">
+          <button type="button" id="copy">Copy link</button>
+          <button type="button" id="open">Open email client</button>
+          <button type="button" id="reset" class="secondary">Reset</button>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="preview-heading">
+        <h2 id="preview-heading">Generated output</h2>
+
+        <label for="mailto-preview">Mailto URL (live preview)</label>
+        <textarea id="mailto-preview" readonly rows="4"></textarea>
+
+        <label for="snippet-preview">HTML snippet</label>
+        <textarea id="snippet-preview" readonly rows="3"></textarea>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
